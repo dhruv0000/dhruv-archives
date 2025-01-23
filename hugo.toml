@@ -1,0 +1,18 @@
+theme = "hugo-dhruv-archives"
+baseURL = "https://dhruv-archives.com/"
+languageCode = "en-us"
+title = "Dhruv Archives"
+
+[params]
+name = "Dhruv"
+bio = "Tech enthusiast, coder, creator."
+avatar = "path/to/your/avatar.jpg"
+google_fonts = [
+    ["Jersey 15", "400"],
+    ["Roboto", "400,700"]
+]
+
+twitter = "realDhruvPatel"
+linkedin = "dhruv0000"
+github = "dhruv0000"
+# behance = "your-behance-id"
