@@ -10,12 +10,19 @@ title = "Dhruv Archives"
         ["Jersey 25 Charted", "400"]
     ]
 
+    heading_font = "Jersey 25 Charted"
+    heading_font_weight = "400"
+    body_font = "Tomorrow"
+    body_font_weight = "400, 700"
+
     github = "dhruv0000"
     linkedin = "dhruv0000"
     twitter = "realDhruvPatel"
     behance = "dhruv-archives"
     animation = "animation/banner.gif"
 
+    favicon = "icons/van-gough.png"                   # customize the default favicon
+    appleTouchIcon = "icons/van-gough.png"   # customize the default 
 
     welcomeMessage = "Welcome to my part of world wide web. Lets start with some music?"
   
@@ -26,3 +33,8 @@ title = "Dhruv Archives"
     [[params.aboutItems]]
         title = "Experience"
         description = "Software Engineer with experience in distributed systems, cloud architecture, and full-stack development"
+
+[privacy]
+  [privacy.x]
+    disable = false
+    enableDNT = true

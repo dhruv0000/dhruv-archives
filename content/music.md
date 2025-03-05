@@ -2,8 +2,8 @@
 title = "Dhruv Groove"
 description = "What am listning to right now"
 date = "2025-02-28"
-aliases = ["music", "art", "blog"]
+aliases = ["music", "art", "about-me"]
 author = "dhruv.p"
 +++
 
-new playlists incoming.
+New incoming playlist.
