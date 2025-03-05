@@ -23,8 +23,6 @@ title = "Dhruv Archives"
 
     favicon = "icons/van-gough.png"                   # customize the default favicon
     appleTouchIcon = "icons/van-gough.png"   # customize the default 
-
-    welcomeMessage = "Welcome to my part of world wide web. Lets start with some music?"
   
     [[params.aboutItems]]
         title = "Education"
@@ -33,6 +31,27 @@ title = "Dhruv Archives"
     [[params.aboutItems]]
         title = "Experience"
         description = "Software Engineer with experience in distributed systems, cloud architecture, and full-stack development"
+    
+    [[params.aboutItems]]
+        title = "Projects"
+        description = "Still working on it. Stay tuned!"
+    
+    [menu]
+        [[menu.main]]
+            identifier = "music"
+            name = "Music"
+            url = "/music/"
+            weight = 10
+        [[menu.main]]
+            identifier = "resume"
+            name = "Resume"
+            url = "/resume/"
+            weight = 10
+        [[menu.main]]
+            identifier = "blog"
+            name = "Blogs"
+            url = "/blog/"
+            weight = 10
 
 [privacy]
   [privacy.x]

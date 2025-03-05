@@ -6,4 +6,4 @@ aliases = ["about-us", "about-hugo"]
 author = "dhruv"
 +++
 
-Hi. So you wanted to know more about me. Deilhted we could talk.
+Hi. So you wanted to know more about me. Delighted we could talk.
