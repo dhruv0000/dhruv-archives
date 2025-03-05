@@ -75,7 +75,7 @@ jobs:
           TZ: America/Los_Angeles
         run: |
           hugo version
-          hugo --minify --debug
+          hugo --minify --logLevel=warn
       
       - name: Check generated public directory
         run: |
