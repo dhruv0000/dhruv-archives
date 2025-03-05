@@ -1,1 +1,5 @@
-public*
+public
+.hugo_build.lock
+themes/hugo-dhruv-archives/public
+ideas
+themes/hugo-dhruv-archives
