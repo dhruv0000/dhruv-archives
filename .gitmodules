@@ -1,3 +1,4 @@
 [submodule "themes/hugo-dhruv-archives"]
 	path = themes/hugo-dhruv-archives
 	url = https://github.com/dhruv0000/hugo-dhruv-archives-theme
+	branch = main

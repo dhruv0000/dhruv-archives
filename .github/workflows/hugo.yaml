@@ -5,7 +5,10 @@ on:
   # Runs on releases
   release:
     types: [published]
-
+  # Runs on pushes to main branch
+  push:
+    branches:
+      - main-publish
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -39,25 +42,46 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+      
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+      
+      - name: Initialize and update submodules (explicit handling)
+        run: |
+          git submodule update --init --recursive
+          git submodule status
+      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      
+      - name: List directory structure for debugging
+        run: |
+          echo "Current directory structure:"
+          ls -la
+          echo "Themes directory:"
+          ls -la themes/ || echo "No themes directory found"
+      
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: |
-          hugo --minify
-      - name: Copy static files
-        run: cp -r static public
+          hugo version
+          hugo --minify --logLevel=warn
+      
+      - name: Check generated public directory
+        run: |
+          echo "Generated public directory content:"
+          ls -la public/
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
