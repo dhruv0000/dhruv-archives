@@ -1,5 +1,5 @@
 theme = "hugo-dhruv-archives"
-baseURL = "https://dhruv-archives.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Dhruv Archives"
 
