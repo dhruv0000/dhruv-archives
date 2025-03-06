@@ -4,37 +4,33 @@ on:
   push:
     branches:
       - main
-    workflow_dispatch: # Allow manual triggering
 
-env:
-GOOGLE_PROJECT_ID: personal-452921
-GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 jobs:
   download-resume:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v1
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
         with:
-          project_id: personal-452921 # Replace with your project ID
+          version: '>= 363.0.0'
 
-      - name: Authenticate with Google Cloud
-        run: gcloud auth activate-service-account --key-file=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      - name: Write credentials file
+        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > credentials.json
 
-      - name: Download Resume as PDF (Requires API call)
+      - name: Set GOOGLE_APPLICATION_CREDENTIALS
+        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$PWD/credentials.json" >> $GITHUB_ENV
+      
+      - name: 'Verify account info'
+        run: gcloud auth list
+
+      - name: Download Resume as PDF
         run: |
-          # This is a placeholder.  You need to implement the actual API call here.
-          # Use the Google Drive API v3 to get the file ID of your Google Doc.
-          # Then, use the Google Docs API or Drive API to export it as a PDF.
-          # Example using curl (replace placeholders with your file ID and appropriate export parameters):
           curl -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
                "https://www.googleapis.com/drive/v3/files/1fJJo3oNB5uM001wyZwGufoIH_EVlie4qRM4k5MXXNL0/export?mimeType=application/pdf" \
                -o resume.pdf
 
-      - name: Upload PDF (Optional)
+      - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: resume
