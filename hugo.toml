@@ -49,6 +49,11 @@ title = "Dhruv Archives"
             name = "Blogs"
             url = "/blog/"
             weight = 10
+        [[menu.main]]
+            identifier = "contact"
+            name = "Contact"
+            url = "/contact/"
+            weight = 10
 
 [privacy]
   [privacy.x]
