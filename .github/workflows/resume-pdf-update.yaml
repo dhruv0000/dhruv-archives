@@ -1,0 +1,111 @@
+name: Update Resume PDF
+
+on:
+  # Run every month to ensure resume stays updated
+  schedule:
+    - cron: '0 0 1 * *'  # At midnight on the 1st of every month
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      doc_url:
+        description: 'Google Doc URL (optional, uses stored secret if not provided)'
+        required: false
+
+jobs:
+  update-resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client requests
+
+      - name: Download Google Doc as PDF
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GOOGLE_DOC_URL: ${{ github.event.inputs.doc_url || secrets.GOOGLE_DOC_URL }}
+          GOOGLE_DOC_ID: ${{ secrets.GOOGLE_DOC_ID }}
+        run: |
+          # Create credentials file from secret
+          echo "$GOOGLE_CREDENTIALS" > credentials.json
+          
+          # Create Python script to download the PDF
+          cat > download_resume.py << 'EOF'
+          import os
+          import re
+          import requests
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+          
+          # Get document ID from URL or directly from secret
+          doc_url = os.environ.get('GOOGLE_DOC_URL', '')
+          doc_id = os.environ.get('GOOGLE_DOC_ID', '')
+          
+          if not doc_id and doc_url:
+              # Extract document ID from URL
+              match = re.search(r'/d/([a-zA-Z0-9-_]+)', doc_url)
+              if match:
+                  doc_id = match.group(1)
+          
+          if not doc_id:
+              raise ValueError("Could not determine Google Doc ID")
+          
+          # Authenticate and build Drive API client
+          credentials = service_account.Credentials.from_service_account_file(
+              'credentials.json',
+              scopes=['https://www.googleapis.com/auth/drive.readonly']
+          )
+          
+          drive_service = build('drive', 'v3', credentials=credentials)
+          
+          # Export the document as PDF
+          request = drive_service.files().export_media(
+              fileId=doc_id,
+              mimeType='application/pdf'
+          )
+          
+          response = request.execute()
+          
+          # Save the PDF locally
+          with open('resume.pdf', 'wb') as f:
+              f.write(response)
+          
+          print(f"Successfully downloaded resume.pdf")
+          EOF
+          
+          # Execute the script
+          python download_resume.py
+          
+          # Clean up credentials file
+          rm credentials.json
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Check if PDF changed
+        id: check_changes
+        run: |
+          if git diff --quiet -- resume.pdf; then
+            echo "No changes to resume.pdf"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in resume.pdf"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git add resume.pdf
+          git commit -m "Update resume.pdf"
+          git push
