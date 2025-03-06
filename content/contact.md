@@ -1,11 +1,13 @@
 +++
 title = "Contact"
 description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
+date = "2025-02-28"
 aliases = ["about-me", "about-hugo", "contact"]
-author = "lee.so"
+author = "dhruv.patel"
 +++
 
 - [github.com/dhruv0000](github.com/dhruv0000)
-- [in/dhruv0000](https://linkedin.com/in/dhruv0000)
-- [dhruvp@cmu.edu](mailto:dhruvp@cmu.edu)
+= [x.com/dhruvArchives](https://x.com/DhruvArchives)
+- [linkedIn/dhruv0000](https://linkedin.com/in/dhruv0000)
+- [mailto:dhruvp at cmu](mailto:dhruvp@cmu.edu)
+- [mailto:dhruvp at duck dot com](mailto:dhruvp@duck.com)
