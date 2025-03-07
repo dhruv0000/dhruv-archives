@@ -22,7 +22,7 @@ title = "Dhruv Archives"
     behance = "dhruv-archives"
     animation = "animation/banner.gif"
 
-    favicon = "icons/van-gough.png"                   # customize the default favicon
+    favicon = "icons/van-gough.ico"                   # customize the default favicon
     appleTouchIcon = "icons/van-gough.png"   # customize the default 
   
     [[params.aboutItems]]
