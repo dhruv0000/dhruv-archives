@@ -1,7 +1,13 @@
 {
-    "build": {
-      "env": {
-        "HUGO_VERSION": "0.145.0"
-      }
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.145.0"
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/redeploy",
+      "schedule": "0 3 * * *"
+    }
+  ]
+}
