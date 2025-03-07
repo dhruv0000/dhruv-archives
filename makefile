@@ -1,11 +1,11 @@
-.PHONY: build serve clean submodule remote
+.PHONY: build serve clean submodule
 
 submodule:
 	git submodule update --init --recursive
 	git submodule status
 
 build: submodule
-	hugo --minify
+	hugo
 
 serve:
 	hugo server -D
@@ -15,8 +15,10 @@ clean:
 	rm -rf resources/
 	rm -rf .hugo_build.lock
 
-remote:
+remote: submodule
+	git checkout main
 	git fetch --all
 	git pull origin main
+	git submodule foreach git checkout main
 	git submodule foreach git fetch --all
 	git submodule foreach git pull origin main
