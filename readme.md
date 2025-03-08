@@ -2,6 +2,9 @@
 
 My personal website built with [Hugo](https://gohugo.io/), using the custom [hugo-dhruv-archives](https://github.com/dhruv0000/hugo-dhruv-archives-theme) theme.
 
+Hosted for free using: [vercel](https://vercel.com/)
+Domain Name: [cloudfare](https://www.cloudflare.com/en-in/products/registrar/)
+
 ## Getting Started
 
 1. Clone this repository:
@@ -14,8 +17,8 @@ My personal website built with [Hugo](https://gohugo.io/), using the custom [hug
    git submodule init
    git submodule update
    ```
-
-3. Start the Hugo development server:
+   
+3. Install [Hugo](https://gohugo.io/) and Start the Hugo development server:
    ```bash
    hugo server -D
    ```
