@@ -35,9 +35,9 @@ title = "Dhruv Archives"
         
     [menu]
         [[menu.main]]
-            identifier = "music"
-            name = "Music"
-            url = "/music/"
+            identifier = "audio-video"
+            name = "Audio/Video"
+            url = "/audio-video/"
             weight = 10
         [[menu.main]]
             identifier = "resume"
