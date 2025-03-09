@@ -17,12 +17,10 @@ clean:
 
 remote:
 	@echo "Updating the repository and submodules"
-	git checkout main
 	git fetch --all
 	git pull origin main
-	git submodule foreach git checkout main
 	git submodule foreach git fetch --all
 	git submodule foreach git pull origin main
 
-	submodule-head-to-main:
+submodule-head-to-main:
 		git submodule foreach git reset --hard origin/main
