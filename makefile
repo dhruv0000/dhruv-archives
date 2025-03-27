@@ -1,4 +1,4 @@
-.PHONY: build serve clean submodule install remote
+.PHONY: build serve clean submodule install remote publish submodule-head-to-main
 
 submodule:
 	git submodule update --init --recursive --remote
@@ -23,4 +23,11 @@ remote:
 	git submodule foreach git pull origin main
 
 submodule-head-to-main:
-		git submodule foreach git reset --hard origin/main
+	git submodule foreach git reset --hard origin/main
+
+publish:
+	@echo "Publishing to main-publish branch"
+	git checkout main-publish
+	git merge main
+	git push origin main-publish
+	git checkout main
