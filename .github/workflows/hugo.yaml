@@ -11,6 +11,26 @@ on:
       - main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      production:
+        description: 'Build production version'
+        required: true
+        default: true
+        type: boolean
+      environment:
+        description: 'Environment to deploy to'
+        required: false
+        default: 'production'
+        type: string
+      hugo_environment:
+        description: 'Hugo environment'
+        required: false
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - development
+          - staging
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
