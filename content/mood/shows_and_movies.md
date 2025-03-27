@@ -1,6 +1,6 @@
 +++
-title = "Mosvies"
-description = "What I liked I watching or what I am currently listning to."
+title = "Movies/Shows"
+description = "What I liked I watching or what I am currently listening to."
 date = "2025-03-26"
 aliases = [ "movies", "tv-shows", "about-me"]
 author = "dhruv.p"
@@ -24,6 +24,7 @@ author = "dhruv.p"
 ### Drama:
 #### Romance
 - `movie` Marriage Story (2019)
+#### Adventure
 
 ### Adventure:
 #### War
@@ -34,3 +35,4 @@ author = "dhruv.p"
 - `movie` Pantheon (2022-2023)
 #### Superhero
 - `series` Invincible (2021-2023)
+- ``
