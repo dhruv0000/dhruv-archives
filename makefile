@@ -26,9 +26,9 @@ submodule-head-to-main:
 	git submodule foreach git reset --hard origin/main
 
 publish:
-	@echo "Publishing to main-publish branch"
-	git checkout main-publish
+	@echo "Publishing to publish branch"
+	git checkout publish
 	git merge main
-	git push origin main-publish
+	git push origin publish
 	git checkout main
-	
+
