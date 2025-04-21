@@ -31,4 +31,3 @@ publish:
 	git merge main
 	git push origin publish
 	git checkout main
-
