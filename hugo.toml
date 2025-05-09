@@ -11,10 +11,11 @@ title = "Dhruv Archives"
         ["Jersey 25 Charted", "400"]
     ]
 
-    heading_font = "Jersey 25 Charted"
-    heading_font_weight = "400"
+    # theme color (checkout font-variable.css))
+    heading_font = "Jersey 15"
+    heading_weight = "400"
     body_font = "Noto Sans"
-    body_font_weight = "400, 700"
+    body_weight = "400, 700"
 
     github = "dhruv0000"
     linkedin = "dhruv0000"

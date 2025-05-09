@@ -18,7 +18,6 @@ weight: 0  # Optional ordering weight
     <title>Redirecting to Resume</title>
     <style>
         body {
-            font-family: 'Noto Sans', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -33,15 +32,12 @@ weight: 0  # Optional ordering weight
             padding: 2rem;
         }
         h1 {
-            font-family: 'Jersey 15', serif;
             margin-bottom: 1rem;
         }
         p {
             margin-bottom: 2rem;
         }
         .btn {
-            background-color: #000;
-            color: #fff;
             padding: 0.75rem 1.5rem;
             text-decoration: none;
             border-radius: 0.75rem;
