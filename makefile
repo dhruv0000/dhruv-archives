@@ -31,3 +31,19 @@ publish:
 	git merge main
 	git push origin publish
 	git checkout main
+
+new-blog:
+	@if [ -z "$(name)" ]; then echo "Usage: make new-blog name=your-post-name"; exit 1; fi
+	hugo new blog/$(name).md
+
+new-primer:
+	@if [ -z "$(name)" ]; then echo "Usage: make new-primer name=your-post-name"; exit 1; fi
+	hugo new primer/$(name).md
+
+new-diary:
+	@if [ -z "$(name)" ]; then echo "Usage: make new-diary name=your-post-name"; exit 1; fi
+	hugo new diary/$(name).md
+
+new-me:
+	@if [ -z "$(name)" ]; then echo "Usage: make new-me name=your-post-name"; exit 1; fi
+	hugo new me/$(name).md
