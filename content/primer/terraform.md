@@ -1,12 +1,11 @@
 ---
 title: "Terraform"
 date: 2025-06-09T12:14:44-04:00
-_build:
-  list: local
-  render: link
+# _build:
+#   list: local
 ---
 
-## Architecture Overview
+# Architecture Overview
 
 Terraform’s architecture breaks down into several components:
 

@@ -16,12 +16,15 @@ title = "Dhruv Archives"
     heading_weight = "400"
     body_font = "Noto Sans"
     body_weight = "400, 700"
+    body_h_weight = "700"
 
+    # Background colors
+    color = "linen"  # background color (search to add more) linen, grey, wheat
+    
     github = "dhruv0000"
     linkedin = "dhruv0000"
-    twitter = "dhruvArchives"
+    twitter = "dhruv_archives"
     behance = "dhruv-archives"
-    animation = "animation/banner.gif"
 
     favicon = "icons/van-gough.ico"                   # customize the default favicon
     appleTouchIcon = "icons/van-gough.png"   # customize the default 
