@@ -11,12 +11,11 @@ Domain Name: [cloudfare Registry](https://www.cloudflare.com/en-in/products/regi
    ```bash
    git clone https://github.com/dhruv0000/dhruv-archives.git
    ```
-
-2. Initialize and update the theme submodule:
+2. Initialize and update the theme submodule using the Makefile:
    ```bash
-   git submodule init
-   git submodule update
+   make submodule
    ```
+   The theme lives in `themes/hugo-dhruv-archives` as a submodule. Run `make submodule-head-to-main` after updating to ensure it always follows the theme's `main` branch.
 
 3. Install [Hugo](https://gohugo.io/) and Start the Hugo development server:
    ```bash
@@ -27,10 +26,32 @@ Domain Name: [cloudfare Registry](https://www.cloudflare.com/en-in/products/regi
 
 ## Adding Content
 
-Create new posts in the `content/posts` directory:
+You can create new content using the Makefile commands:
+
 ```bash
-hugo new posts/my-new-post.md
+make new-blog name=my-post
+make new-primer name=my-note
+make new-diary name=my-entry
+make new-me name=about-me
 ```
+### Makefile Commands
+- **build**: build the site with minification.
+- **serve**: run a development server.
+- **clean**: remove generated files.
+- **remote**: fetch updates for repo and submodules.
+- **submodule-head-to-main**: ensure the theme submodule points to its main branch.
+- **publish**: merge main into the publish branch.
+- **new-blog**: create a blog post (`make new-blog name=my-post`).
+- **new-primer**: create a primer note (`make new-primer name=my-note`).
+- **new-diary**: create a diary entry (`make new-diary name=my-entry`).
+- **new-me**: create a page under `content/me` (`make new-me name=about-me`).
+### Content Folders
+- **blog**: draft or public facing posts.
+- **primer**: notes on tech stacks available via direct link only.
+- **diary**: private posts for my eyes or selected users later.
+- **me**: personal pages and experiments.
+
+
 
 ## License
 
