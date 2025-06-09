@@ -1,7 +1,9 @@
 ---
 title: "Python"
 date: 2025-05-21T12:14:44-04:00
-draft: true
+_build:
+  list: local
+  render: link
 ---
 
 ## 1 · Language Basics

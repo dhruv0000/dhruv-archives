@@ -1,3 +1,11 @@
+---
+title: "Django"
+date: 2025-06-09T12:14:44-04:00
+_build:
+  list: local
+  render: link
+---
+
 # Django
 Django is a high-level Python web framework that promotes rapid development and clean, pragmatic design by taking care of common web development tasks so developers can focus on application logic ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Introduction?utm_source=chatgpt.com)). It follows a shared-nothing architecture that cleanly separates its components, allowing you to scale by adding hardware at any level—database servers, caching servers, or web/app servers—without tight coupling between layers ([Django Project](https://docs.djangoproject.com/en/5.2/faq/general/?utm_source=chatgpt.com)). At its core, Django adopts a variant of the MVC pattern, combining an Object-Relational Mapper (ORM), a URL dispatcher, a templating engine, and middleware into a cohesive yet loosely coupled stack that handles everything from request routing to response rendering ([Wikipedia](https://en.wikipedia.org/wiki/Django_%28web_framework%29?utm_source=chatgpt.com)).
 

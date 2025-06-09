@@ -1,3 +1,11 @@
+---
+title: "LinkedIn Multi Agent"
+date: 2025-06-09T12:14:44-04:00
+_build:
+  list: local
+  render: link
+---
+
 ## LammaIndex: Building Argentic AI System with Devs
 Tech Stack:
 - LammaIndex:
@@ -26,7 +34,7 @@ Tech Stack:
         - Instance Vars: Initial input, user input
         - Global context: cache between steps (Can use `ChatMemoryBuffer` to store memory)
         - Event Attributes: I/O of steps
-```
+````markdown
 #Define a custom ContinueEvent that inherits from Event
 class ContinueEvent(Event):
     iterations: int
@@ -113,3 +121,4 @@ Teachable Agents: Learn from and retain new information.
 
 ## ChatGPT Operators
 - Give access to browser, mouse and keyboard
+````

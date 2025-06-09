@@ -1,3 +1,11 @@
+---
+title: "GCP"
+date: 2025-06-09T12:14:44-04:00
+_build:
+  list: local
+  render: link
+---
+
 # GCP Compute Services Overview
 
 A quick reference to pick, configure and manage compute in GCP.

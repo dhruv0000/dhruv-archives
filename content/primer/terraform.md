@@ -1,9 +1,10 @@
 ---
-
 title: "Terraform"
-date: 2025-05-22T12:13:42-04:00
-draft: true
------------
+date: 2025-06-09T12:14:44-04:00
+_build:
+  list: local
+  render: link
+---
 
 ## Architecture Overview
 

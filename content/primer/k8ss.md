@@ -1,3 +1,11 @@
+---
+title: "Kubernetes"
+date: 2025-06-09T12:14:44-04:00
+_build:
+  list: local
+  render: link
+---
+
 # Learning Kubernetes – Quick-Start Cheat Sheet
 
 _Build, deploy & manage containerized apps with Kubernetes (Minikube)_

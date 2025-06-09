@@ -1,3 +1,11 @@
+---
+title: "Multi Agent"
+date: 2025-06-09T12:14:44-04:00
+_build:
+  list: local
+  render: link
+---
+
 AI Agents:
 interact with env, make decision based on it.
 Thought -> Action -> Observation -> Response or Thought
