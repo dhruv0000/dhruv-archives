@@ -2,8 +2,9 @@
 
 My personal website built with [Hugo](https://gohugo.io/), using the custom [hugo-dhruv-archives](https://github.com/dhruv0000/hugo-dhruv-archives-theme) theme.
 
-Hosted for free using: [](https://vercel.com/)
-Domain Name: [cloudfare Registry](https://www.cloudflare.com/en-in/products/registrar/)
+Hosted for free on using Cloudflare pages. Paid Domain Name by them too: [cloudfare Registry](https://www.cloudflare.com/en-in/products/registrar/). [No setup guide for this, use Dashboard Screenshots + chatGPT if you are new to it :)]
+
+Checkout the App Script to push and google doc to a github repo. I use it to update my resume here.
 
 ## Getting Started
 
@@ -34,6 +35,7 @@ make new-primer name=my-note
 make new-diary name=my-entry
 make new-me name=about-me
 ```
+
 ### Makefile Commands
 - **build**: build the site with minification.
 - **serve**: run a development server.
@@ -45,13 +47,12 @@ make new-me name=about-me
 - **new-primer**: create a primer note (`make new-primer name=my-note`).
 - **new-diary**: create a diary entry (`make new-diary name=my-entry`).
 - **new-me**: create a page under `content/me` (`make new-me name=about-me`).
-### Content Folders
+
+### [Future Theme Plans] Content Folders
 - **blog**: draft or public facing posts.
 - **primer**: notes on tech stacks available via direct link only.
 - **diary**: private posts for my eyes or selected users later.
 - **me**: personal pages and experiments.
-
-
 
 ## License
 
