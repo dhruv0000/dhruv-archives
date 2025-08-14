@@ -1,9 +1,8 @@
 ---
 title: "React"
 date: 2025-06-09T12:14:44-04:00
-_build:
-  list: local
-  render: link
+# _build:
+#   list: local
 ---
 
 # React
@@ -119,7 +118,6 @@ _build:
 
 - Security
     - Flow: Type Checker
-    <!-- - Not Cross-Origin Resource Sharing (CORS) on server -->
     - Always use SSL Certificate and HTTPS
     - Salting (append deterministic random string for each user) + peppering (add common string)
     - Always use backend for data processing (front-end no data then it needs to know)

@@ -8,15 +8,19 @@ title = "Dhruv Archives"
         ["Jersey 15", "400"],
         ["Tomorrow", "400,700"],
         ["Noto Sans", "400, 700"],
+        ["Courier Prime", "400, 700"],
         ["Jersey 25 Charted", "400"]
     ]
 
     # theme color (checkout font-variable.css))
     heading_font = "Jersey 15"
     heading_weight = "400"
-    body_font = "Noto Sans"
+    body_font = "Courier Prime"
     body_weight = "400, 700"
     body_h_weight = "700"
+
+    # Shows up in front page
+    mainSections = ["blog"]
 
     # Background colors
     color = "linen"  # background color (search to add more) linen, grey, wheat
@@ -36,7 +40,7 @@ title = "Dhruv Archives"
     [[params.aboutItems]]
         title = "Things I did:"
         description = "My work spans full-stack development, system design, and infrastructure optimization. I build resilient systems that scale efficiently while maintaining clear and intuitive interfaces. Checkout my <a href='/resume/'>resume</a> for more details."
-        
+    
     [menu]
         [[menu.main]]
             identifier = "audio-video"
