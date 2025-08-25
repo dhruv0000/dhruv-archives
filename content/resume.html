@@ -7,8 +7,9 @@ layout = "single"
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Modified meta: add id so JS can update it -->
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/files/resume.pdf">
+    <meta id="resume-meta" http-equiv="refresh" content="0; url=/files/resume.pdf">
     <title>Redirecting to Resume</title>
     <style>
         body {
@@ -57,11 +58,20 @@ layout = "single"
     <div class="container">
         <h1>Redirecting to Resume</h1>
         <p>If you are not redirected automatically, click the link below:</p>
-        <a class="btn" href="https://github.com/dhruv0000/dhruv-archives/blob/main/resume.pdf">View Resume</a>
+        <!-- Remove hardcoded href and add id so JS sets it from a single var -->
+        <a id="resume-link" class="btn" href="#">View Resume</a>
     </div>
     <script>
+        // Use a single variable for the resume URL across meta, link, and redirect
+        const resumeUrl = 'https://github.com/dhruv0000/dhruv-archives/blob/main/resume/Dhruv%27s-Resume-2025.pdf';
+        // Update meta refresh to point to resumeUrl
+        const meta = document.getElementById('resume-meta');
+        if (meta) meta.setAttribute('content', '0; url=' + resumeUrl);
+        // Update the anchor href
+        const link = document.getElementById('resume-link');
+        if (link) link.href = resumeUrl;
         // Redirect to the resume
-        window.location.href = "https://github.com/dhruv0000/dhruv-archives/blob/main/resume.pdf";
+        window.location.href = resumeUrl;
     </script>
 </body>
 </html>
